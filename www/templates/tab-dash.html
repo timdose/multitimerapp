@@ -1,5 +1,27 @@
 <ion-view title="Dashboard">
   <ion-content class="padding">
-    <h1>Dash</h1>
+    <div class="timers">
+
+        <div class="timer" ng-repeat="timer in timers">
+          <div class="row">
+
+            <div class="secondary-controls col col-20">
+              <a href="#" class="control ion-close"></a>
+            </div>
+
+            <div class="info col">
+              <div class="value">{{timer.value}}</div>
+              <div class="title">{{timer.title}}</div>
+            </div>
+
+            <div class="primary-controls col">
+              <a href="#" class="control ion-edit"></a>
+              <a href="#" class="control ion-play"></a>
+            </div>
+
+          </div>
+        </div>
+
+    </div>
   </ion-content>
 </ion-view>
