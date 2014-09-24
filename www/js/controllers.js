@@ -5,6 +5,10 @@ angular.module('starter.controllers', [])
     {value: 300, title: 'Timer 1'},
     {value: 500, title: 'Timer 2'}
   ];
+
+  $scope.startTimer = function(timer){
+    console.log('timer '+ timer.name +' started');
+  };
 })
 
 .controller('FriendsCtrl', function($scope, Friends) {

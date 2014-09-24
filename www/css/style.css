@@ -5,32 +5,8 @@
   margin-bottom: 10px;  
 }
 
-.timer .info {
-}
-
-.timer .control {
-  display: inline-block;
-  text-align: center;
-  font-size: 25px;
-  vertical-align: middle;
-  padding: 8px;
-  width: 40px;
-  background: #ddd;
-  border-radius: 5px;
-  color: #666;
-}
-
-.timer .control:hover {
-  color: #777;
-  background: #dadada;
-}
-
-.timer .primary-controls {
-  text-align: right;
-}
-
-
-.timer .primary-controls .control {
+.timer .controls {
+  padding: 5px;
 }
 
 .timer .value {
