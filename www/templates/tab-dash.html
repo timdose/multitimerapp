@@ -15,7 +15,8 @@
             </div>
 
             <div class="controls primary-controls">
-              <button ng-click="startTimer(timer)" class="button button-outline icon ion-play"></button>
+              <button ng-show="timer.state == 'static'" ng-click="startTimer(timer)" class="button button-outline icon ion-play"></button>
+              <button ng-hide="timer.state == 'static'" ng-click="pauseTimer(timer)" class="button button-outline icon ion-pause"></button>
             </div>
 
           </div>
