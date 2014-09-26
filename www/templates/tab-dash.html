@@ -10,13 +10,12 @@
             </div>
 
             <div class="info col">
-              <div class="value">{{timer.value}}</div>
+              <div class="value" ng-bind="timer.currentValue"></div>
               <div class="title">{{timer.title}}</div>
             </div>
 
             <div class="controls primary-controls">
-              <button class="button button-outline icon ion-edit"></button>
-              <button class="button button-outline icon ion-play"></button>
+              <button ng-click="startTimer(timer)" class="button button-outline icon ion-play"></button>
             </div>
 
           </div>

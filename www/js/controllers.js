@@ -2,13 +2,24 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {
   $scope.timers = [
-    {value: 300, title: 'Timer 1'},
-    {value: 500, title: 'Timer 2'}
+    {originalValue: 300, currentValue: 300, title: 'Timer 1' },
+    {originalValue: 500, currentValue: 500, title: 'Timer 2' }
   ];
 
   $scope.startTimer = function(timer){
-    console.log('timer '+ timer.name +' started');
+    timer.interval = setInterval(function() {
+      timer.currentValue = timer.currentValue - 1;
+      $scope.$apply();
+      if (timer.currentValue === 0 ) {
+        $scope.endTimer(timer);
+        clearInterval(timer.interval);
+      }
+    }, 1000 );
   };
+
+  $scope.endTimer = function(timer){
+    console.log(timer.title + " Finished!");
+  }
 })
 
 .controller('FriendsCtrl', function($scope, Friends) {
