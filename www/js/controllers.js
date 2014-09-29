@@ -2,12 +2,12 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {
   $scope.timers = [
-    {originalValue: 300, currentValue: 300, title: 'Timer 1', state: 'static' },
-    {originalValue: 500, currentValue: 500, title: 'Timer 2', state: 'static' }
+    {originalValue: 300, currentValue: 300, title: 'Timer 1', isRunning: false },
+    {originalValue: 500, currentValue: 500, title: 'Timer 2', isRunning: false }
   ];
 
   $scope.startTimer = function(timer){
-    timer.state = 'running';
+    timer.isRunning = true;
     timer.currentValue = timer.currentValue - 1;
     timer.interval = setInterval(function() {
       timer.currentValue = timer.currentValue - 1;
@@ -20,7 +20,7 @@ angular.module('starter.controllers', [])
   };
 
   $scope.pauseTimer = function(timer){
-    timer.state = 'static';
+    timer.isRunning = false;
     clearInterval(timer.interval);
   };
 
