@@ -24,6 +24,10 @@ angular.module('starter.controllers', [])
     clearInterval(timer.interval);
   };
 
+  $scope.resetTimer = function(timer){
+    timer.currentValue = timer.originalValue;
+  }
+
   $scope.endTimer = function(timer){
     console.log(timer.title + " Finished!");
   }
