@@ -34,6 +34,7 @@ angular.module('starter.controllers', [])
 
   $scope.addTimer = function() {
     var newTimer = angular.copy($scope.timers[$scope.timers.length-1]);
+    newTimer.currentValue = newTimer.originalValue;
     $scope.timers.push(newTimer);
   }
 })
