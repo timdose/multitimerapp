@@ -31,6 +31,11 @@ angular.module('starter.controllers', [])
   $scope.endTimer = function(timer){
     console.log(timer.title + " Finished!");
   }
+
+  $scope.addTimer = function() {
+    var newTimer = angular.copy($scope.timers[$scope.timers.length-1]);
+    $scope.timers.push(newTimer);
+  }
 })
 
 .controller('FriendsCtrl', function($scope, Friends) {
