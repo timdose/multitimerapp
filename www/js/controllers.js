@@ -6,11 +6,9 @@ angular.module('lodash', [])
 
 angular.module('starter.controllers', ['lodash'])
   .controller('DashCtrl', function($scope, _) {
+    $scope.defaultTimer = {id:0, originalValue: 60, currentValue: 60, title: 'Timer 1', isRunning: false };
 
-    $scope.timers = [
-      {id:0, originalValue: 300, currentValue: 300, title: 'Timer 1', isRunning: false },
-      {id:1, originalValue: 500, currentValue: 500, title: 'Timer 2', isRunning: false }
-    ];
+    $scope.timers = [ $scope.defaultTimer ];
 
     $scope.startTimer = function(timer){
       timer.isRunning = true;
@@ -39,7 +37,12 @@ angular.module('starter.controllers', ['lodash'])
     }
 
     $scope.addTimer = function() {
-      var newTimer = angular.copy($scope.timers[$scope.timers.length-1]);
+      var newTimer;
+      if ($scope.timers.length > 0 ) {
+        newTimer = angular.copy($scope.timers[$scope.timers.length-1]);
+      } else {
+        newTimer = $scope.defaultTimer;
+      }
       newTimer.currentValue = newTimer.originalValue;
       newTimer.id++;
       $scope.timers.push(newTimer);
