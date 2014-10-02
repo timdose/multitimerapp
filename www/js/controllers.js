@@ -58,5 +58,5 @@ angular.module('starter.controllers', ['lodash'])
 
   })
 
-  .controller('AccountCtrl', function($scope) {
+  .controller('SettingsCtrl', function($scope) {
   });
