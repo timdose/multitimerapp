@@ -5,7 +5,7 @@ angular.module('lodash', [])
 
 
 angular.module('starter.controllers', ['lodash'])
-  .controller('DashCtrl', function($scope, _) {
+  .controller('TimersCtrl', function($scope, _) {
     $scope.defaultTimer = {id:0, originalValue: 60, currentValue: 60, title: 'Timer 1', isRunning: false };
 
     $scope.timers = [ $scope.defaultTimer ];
