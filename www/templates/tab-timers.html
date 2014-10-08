@@ -15,7 +15,7 @@
             </div>
 
             <div class="controls primary-controls">
-              <button ng-show="!timer.isRunning && timer.currentValue != timer.originalValue" ng-click="resetTimer(timer)" class="button button-outline icon ion-refresh"></button>
+              <button ng-class="!timer.isRunning && timer.currentValue != timer.originalValue? 'visible':'hidden'" ng-click="resetTimer(timer)" class="button button-outline icon ion-refresh"></button>
               <button ng-click="timer.isRunning? pauseTimer(timer):startTimer(timer)" class="button button-outline icon" ng-class="timer.isRunning? 'ion-pause':'ion-play'"></button>
             </div>
 

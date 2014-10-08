@@ -7,6 +7,15 @@
 
 .timer .controls {
   padding: 5px;
+  text-align: right;
+}
+
+.timer .controls .hidden {
+  visibility: hidden;
+}
+
+.timer .controls .visible {
+  visibility: visible;
 }
 
 .timer .value {
